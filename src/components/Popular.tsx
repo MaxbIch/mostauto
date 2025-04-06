@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // @ts-ignore
 import redLine from "../img/redLine.svg"
+import ContactUs from "./ContactUs";
 
 type CarType = {
   manufacturer: string
@@ -26,7 +27,7 @@ type CarType = {
 
 export const Popular = () => {
 
-  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>(1)
   const [count, setCount] = useState<number | null>(null);
   const [data, setData] = useState<CarType>()
 
@@ -48,10 +49,11 @@ export const Popular = () => {
   const swiperRef = useRef(null)
 
   return (
-      <div className="popular-container">
+      <div id="Popular" className="popular-container">
         <Swiper
             ref={swiperRef}
             navigation
+            speed={2000}
             pagination={{clickable: true}}
             autoplay={false}
             modules={[Navigation, Pagination]}
@@ -64,11 +66,12 @@ export const Popular = () => {
                      style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Swiper
                       // @ts-ignore
-                      lazy={true}
                       direction={'vertical'}
                       slidesPerView={1}
+                      speed={2000}
                       autoplay={{
                         delay: 4000,
+
                       }}
                       pagination={{clickable: true}}
                       modules={[Pagination, Autoplay]}
@@ -97,9 +100,10 @@ export const Popular = () => {
                   >
                     <h2
                         style={{
-                          fontSize: "60px",
-                          fontWeight: 600,
-                          lineHeight: "100%"
+                          fontSize: "48px",
+                          fontWeight: 500,
+                          lineHeight: "100%",
+                          fontFamily: "Montserrat",
                         }}
                     >
                       {data?.manufacturer} {data?.model}
@@ -132,7 +136,9 @@ export const Popular = () => {
               </SwiperSlide>
           ))}
         </Swiper>
+        <ContactUs tittle={"ПОПУЛЯРНЫЕ АВТО"} />
       </div>
+
   );
 };
 
@@ -168,9 +174,10 @@ const TextItem: FC<TextItemI> = ({title, text, price = null}) => {
 
   const styleTitle = {}
   const styleText = {
-    fontSize: "36px",
+    fontSize: "24px",
     fontWeight: 400,
     lineHeight: "100%",
+    fontFamily: "Montserrat",
   }
 
 
@@ -196,5 +203,6 @@ const TextItem: FC<TextItemI> = ({title, text, price = null}) => {
           }
         </div>
       </div>
+
   )
 }

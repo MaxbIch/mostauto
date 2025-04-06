@@ -11,68 +11,428 @@ function Delivery () {
 		}
 	};
 
+
     return (
-        <div id="Delivery" className="delivery-container">
+        <div id="Delivery" className="del-container">
 
-			<div className="delivery-container-tittle"><h5 className={activeTab === "EU" ? "active" : ""} onClick={() => handleTabChange("EU")}>ЕВРОПА</h5>
-				<span>|</span>
-				<h5 className={activeTab === "USA" ? "active" : ""} onClick={() => handleTabChange("USA")}>США</h5>
-			</div>
-				<div className="col-12 delivery-content">
-					{activeTab === "EU" && (
-            		<div key="eu" className="delivery-block fade-in">
-						<div className="delivery-left eu">
-							<div className="delivery-steps delivery-steps1"><div>6</div>Передача автомобиля заказчику и помощь в восстановлении</div>
-							<div className="delivery-steps"><div>5</div>Приёмка автомобиля в Беларуси и таможенное оформление</div>
-							<div className="delivery-steps delivery-steps1"><div>4</div>Доставка автомобиля в порт, загрузка в контейнер и отслеживание
-								до прибытия в Беларусь
-							</div>
-						</div>
-						<div className="delivery-right eu">
-							<div className="delivery-steps delivery-steps3"><div>1</div>Оформление заявки, консультация и предварительный подбор
-								автомобиля менеджером MOSTAUTO
-							</div>
-							<div className="delivery-steps delivery-steps2"><div>2</div>Заключение договора, подбор автомобиля по заданным требованиям и
-								согласование к торгам
-							</div>
-							<div className="delivery-steps delivery-steps3"><div>3</div>Победа в торгах и оформление документов для оплаты и доставки
-								подобранного автомобиля или поиск нового
-							</div>
-						</div>
-					</div>
-					)}
+            <div className="delivery-container-tittle"><h5 className={activeTab === "EU" ? "active" : ""}
+                                                           onClick={() => handleTabChange("EU")}>ЕВРОПА</h5>
+                <span>|</span>
+                <h5 className={activeTab === "USA" ? "active" : ""} onClick={() => handleTabChange("USA")}>США</h5>
+            </div>
 
-					{activeTab === "USA" && (
+            <div className="background">
+                <div>ЭТАПЫ</div>
+                <div><b>ДОСТАВКИ</b></div>
+                <div>АВТО</div>
+            </div>
 
-						<div key="usa" className="delivery-block fade-in">
-					  <div className="delivery-left">
-						<div className="delivery-steps delivery-steps1">
-						  <div>6</div>Передача автомобиля заказчику в США
-						</div>
-						<div className="delivery-steps">
-						  <div>5</div>Таможенное оформление в США
-						</div>
-						<div className="delivery-steps delivery-steps1">
-						  <div>4</div>Доставка в порт США и отправка контейнера
-						</div>
-					  </div>
-					  <div className="delivery-right">
-						<div className="delivery-steps delivery-steps3">
-						  <div>1</div>Оформление заявки и подбор автомобиля в США
-						</div>
-						<div className="delivery-steps delivery-steps2">
-						  <div>2</div>Заключение договора и участие в торгах
-						</div>
-						<div className="delivery-steps delivery-steps3">
-						  <div>3</div>Победа в торгах и подготовка к отправке
-						</div>
-					  </div>
-					</div>
-				  )}
-        	</div>
-		<ContactUs tittle={"ПОДБОР И ДОСТАВКА"} type={"black"}/>
-    </div>
-  );
+            <div className="desktop">
+                {activeTab === "EU" && (
+                    <div key="eu" className="fade-in">
+
+                        <div className="steps-wrapper">
+                            <div className="steps-top">
+
+                                <div className="step step6">
+                                    <div className="step-main">
+                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                    </div>
+                                    <div className="step-main-number">6</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">7-30 дней</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point-end"></div>
+                                </div>
+
+                                <div className="between-line">
+                                    <div className="between-line-vert"></div>
+                                </div>
+
+                                <div className="step step1">
+                                    <div className="del-point-end"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1 день</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">1</div>
+                                    <div className="step-main">
+                                        Оформление заявки,<br/> консультация и<br/> предварительный<br/> подбор
+                                        автомобиля<br/> менеджером MOSTAUTO
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="steps-middle">
+
+                                <div className="step step5">
+                                    <div className="step-main">
+                                        Приёмка автомобиля в<br/> Беларуси и таможенное<br/> оформление
+                                    </div>
+                                    <div className="step-main-number">5</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1-2 дня</div>
+                                    <div className="step-line step-line-centre"></div>
+                                </div>
+
+
+                                <div className="step step2">
+                                    <div className="step-line step-line-centre"></div>
+                                    <div className="step-line-text">5-10 дней</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">2</div>
+                                    <div className="step-main">
+                                        Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
+                                        согласование к торгам
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="steps-bottom">
+
+                                <div className="step step4">
+                                    <div className="step-main">
+                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
+                                        отслеживание до<br/> прибытия в Беларусь
+                                    </div>
+                                    <div className="step-main-number">4</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">2-2,5 мес.</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point-end"></div>
+                                </div>
+
+                                <div className="between-line">
+                                    <div className="between-line-vert-bottom"></div>
+                                </div>
+
+                                <div className="step step3">
+                                    <div className="del-point-end"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1-3 дня</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">3</div>
+                                    <div className="step-main">
+                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
+                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === "USA" && (
+
+                    <div key="usa" className="fade-in">
+                        <div className="steps-wrapper">
+                            <div className="steps-top">
+
+                                <div className="step step6">
+                                    <div className="step-main">
+                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                    </div>
+                                    <div className="step-main-number">6</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">7-30 дней</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point-end"></div>
+                                </div>
+
+                                <div className="between-line">
+                                    <div className="between-line-vert"></div>
+                                </div>
+
+                                <div className="step step1">
+                                    <div className="del-point-end"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1 день</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">1</div>
+                                    <div className="step-main">
+                                        Оформление заявки,<br/> консультация и<br/> предварительный<br/> подбор
+                                        автомобиля<br/> менеджером MOSTAUTO
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="steps-middle">
+
+                                <div className="step step5">
+                                    <div className="step-main">
+                                        Приёмка автомобиля в<br/> Беларуси и таможенное<br/> оформление
+                                    </div>
+                                    <div className="step-main-number">5</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1-2 дня</div>
+                                    <div className="step-line step-line-centre"></div>
+                                </div>
+
+
+                                <div className="step step2">
+                                    <div className="step-line step-line-centre"></div>
+                                    <div className="step-line-text">5-10 дней</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">2</div>
+                                    <div className="step-main">
+                                        Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
+                                        согласование к торгам
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="steps-bottom">
+
+                                <div className="step step4">
+                                    <div className="step-main">
+                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
+                                        отслеживание до<br/> прибытия в Беларусь
+                                    </div>
+                                    <div className="step-main-number">4</div>
+                                    <div className="del-point"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">2-2,5 мес.</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point-end"></div>
+                                </div>
+
+                                <div className="between-line">
+                                    <div className="between-line-vert-bottom"></div>
+                                </div>
+
+                                <div className="step step3">
+                                    <div className="del-point-end"></div>
+                                    <div className="step-line"></div>
+                                    <div className="step-line-text">1-3 дня</div>
+                                    <div className="step-line"></div>
+                                    <div className="del-point"></div>
+                                    <div className="step-main-number">3</div>
+                                    <div className="step-main">
+                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
+                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                )}
+            </div>
+
+
+            <div className="mobile">
+                {activeTab === "EU" && (
+                    <div key="eu" className="fade-in">
+
+                        <div className="steps-wrapper steps-wrapper-mobile">
+
+                            <div className="step step2 step2-mobile">
+                                <div className="step-main-number">2</div>
+                                <div className="step-main step-main-mobile">
+                                    Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
+                                    согласование к торгам
+                                </div>
+                            </div>
+
+                            <div className="steps-top steps-top-mobile">
+
+                                <div className="step step1">
+                                    <div className="step-main-number">1</div>
+                                    <div className="step-main step-main-mobile">
+                                        Оформление заявки,<br/> консультация и<br/> предварительный<br/> подбор
+                                        автомобиля<br/> менеджером MOSTAUTO
+                                    </div>
+                                </div>
+
+                                <div className="step step3">
+                                    <div className="step-main-number">3</div>
+                                    <div className="step-main step-main-mobile">
+                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
+                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="del-time-top">
+                                <div className="step-line"></div>
+                                <div className="step-line-text">5-10 дней</div>
+                                <div className="step-line"></div>
+                                <div className="del-point-end"></div>
+                            </div>
+
+                            <div className="del-time-bottom">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1-2 дня</div>
+                                <div className="step-line"></div>
+                            </div>
+
+                            <div className="del-time-left">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">7-30 дней</div>
+                                <div className="step-line"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1 день</div>
+                                <div className="del-point"></div>
+                            </div>
+
+                            <div className="del-time-line"></div>
+
+                            <div className="del-time-right">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">2-2,5 мес</div>
+                                <div className="step-line"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1-3 дня</div>
+                                <div className="del-point"></div>
+                            </div>
+
+                            <div className="steps-middle steps-middle-mobile">
+
+                                <div className="step step6">
+                                    <div className="step-main-number">6</div>
+                                    <div className="step-main step-main-mobile">
+                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                    </div>
+                                </div>
+
+                                <div className="step step4">
+                                    <div className="step-main-number">4</div>
+                                    <div className="step-main step-main-mobile">
+                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
+                                        отслеживание до<br/> прибытия в Беларусь
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="step step5 step5-mobile">
+                                <div className="step-main-number">5</div>
+                                <div className="step-main step-main-mobile">
+                                    Приёмка автомобиля в<br/> Беларуси и таможенное<br/> оформление
+                                </div>
+                                <div className="step-line step-line-centre"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === "USA" && (
+
+                    <div key="usa" className="fade-in">
+
+                        <div className="steps-wrapper steps-wrapper-mobile">
+
+                            <div className="step step2 step2-mobile">
+                                <div className="step-main-number">2</div>
+                                <div className="step-main step-main-mobile">
+                                    Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
+                                    согласование к торгам
+                                </div>
+                            </div>
+
+                            <div className="steps-top steps-top-mobile">
+
+                                <div className="step step1">
+                                    <div className="step-main-number">1</div>
+                                    <div className="step-main step-main-mobile">
+                                        Оформление заявки,<br/> консультация и<br/> предварительный<br/> подбор
+                                        автомобиля<br/> менеджером MOSTAUTO
+                                    </div>
+                                </div>
+
+                                <div className="step step3">
+                                    <div className="step-main-number">3</div>
+                                    <div className="step-main step-main-mobile">
+                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
+                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="del-time-top">
+                                <div className="step-line"></div>
+                                <div className="step-line-text">5-10 дней</div>
+                                <div className="step-line"></div>
+                                <div className="del-point-end"></div>
+                            </div>
+
+                            <div className="del-time-bottom">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1-2 дня</div>
+                                <div className="step-line"></div>
+                            </div>
+
+                            <div className="del-time-left">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">7-30 дней</div>
+                                <div className="step-line"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1 день</div>
+                                <div className="del-point"></div>
+                            </div>
+
+                            <div className="del-time-line"></div>
+
+                            <div className="del-time-right">
+                                <div className="del-point-end"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">2-2,5 мес</div>
+                                <div className="step-line"></div>
+                                <div className="step-line"></div>
+                                <div className="step-line-text">1-3 дня</div>
+                                <div className="del-point"></div>
+                            </div>
+
+                            <div className="steps-middle steps-middle-mobile">
+
+                                <div className="step step6">
+                                    <div className="step-main-number">6</div>
+                                    <div className="step-main step-main-mobile">
+                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                    </div>
+                                </div>
+
+                                <div className="step step4">
+                                    <div className="step-main-number">4</div>
+                                    <div className="step-main step-main-mobile">
+                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
+                                        отслеживание до<br/> прибытия в Беларусь
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="step step5 step5-mobile">
+                                <div className="step-main-number">5</div>
+                                <div className="step-main step-main-mobile">
+                                    Приёмка автомобиля в<br/> Беларуси и таможенное<br/> оформление
+                                </div>
+                                <div className="step-line step-line-centre"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                )}
+            </div>
+
+
+            <div className="del-info">
+                Указанные сроки являются предварительными и могут корректироваться в зависимости от сложности запроса,
+                местоположения автомобиля и др.
+            </div>
+            <ContactUs tittle={"ПОДБОР И ДОСТАВКА"} type={"black"}/>
+        </div>
+    );
 }
 
 

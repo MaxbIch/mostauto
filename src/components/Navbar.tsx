@@ -25,7 +25,7 @@ function Navbar({menuActive, setMenuActive}) {
                 MENU
             </div>
             <div className="navbar-right">
-                <img className="logo-navbar" src={logo} alt=""/>
+                <a href="#header"><img className="logo-navbar" src={logo} alt=""/></a>
                 <div className="navbar-tittle">ПОДОБРАТЬ АВТО<img src={Arrow2} alt=""/></div>
                 <div className="navbar-contact-us">
                     <div className="number"><b><a href="tel:+375298576896">+375 (29) 857-68-96</a></b></div>

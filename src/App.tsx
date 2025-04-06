@@ -1,4 +1,5 @@
 import './App.css';
+import './AppMedia.css';
 import Header from "./components/Header";
 import {useState} from "react";
 import Navbar from "./components/Navbar";

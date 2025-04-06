@@ -81,7 +81,10 @@ function Form() {
 		}
 	};
 
-
+    const timeSlots = Array.from({ length: 10 }, (_, i) => {
+        const hour = 10 + i;
+        return `${hour}:00`;
+    });
 
 	return (
 		<>
@@ -103,23 +106,27 @@ function Form() {
 						<input type="text" placeholder="Ваше имя" value={name}
 							   onChange={(e) => setName(e.target.value)}/>
 						{errors.name && <span className="error">{errors.name}</span>}
-						<input type="text" placeholder="Удобное время для связи" value={time}
-							   onChange={(e) => setTime(e.target.value)}/>
-					</div>
-					<div className="zak_pod" onClick={handleSubmit}>
-						ЗАКАЗАТЬ <br/> ПОДБОР <img src={arrow7} alt=""/>
-					</div>
+                        <select value={time} onChange={(e) => setTime(e.target.value)}>
+                            <option value="">Удобное время для связи</option>
+                            {timeSlots.map((slot, index) => (
+                                <option key={index} value={slot}>{slot}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="zak_pod" onClick={handleSubmit}>
+                        ЗАКАЗАТЬ <br/> ПОДБОР <img src={arrow7} alt=""/>
+                    </div>
 
-					{isSuccess && (
-					<div className={`alert ${isSuccess ? "success" : "unSend"}`}>
-					  <p>Форма успешно отправлена!</p>
-					</div>
-					)}
+                    {isSuccess && (
+                        <div className={`alert ${isSuccess ? "success" : "unSend"}`}>
+                            <div>Форма успешно отправлена!</div>
+                        </div>
+                    )}
 
-				</div>
-			</div>
-		</>
-	)
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Form;
