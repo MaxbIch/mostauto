@@ -22,7 +22,7 @@ const CookieBanner = () => {
       <div>
         Мы используем cookies для улучшения работы сайта. Продолжая использовать
         сайт, вы соглашаетесь с{" "}
-		  <a href="../../public/Privacy.html" className="cookie-link">
+		  <a href="../Privacy.html" className="cookie-link">
 			  политикой конфиденциальности
 		  </a>
 		  .

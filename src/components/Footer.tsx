@@ -17,7 +17,7 @@ function Footer() {
                     <img className="footerLogo" src={footerlogo} alt=""/><br/>
                     <a href="">MOSTAUTO.by</a>
                     <div>Все права защищены</div>
-					<div><a href="../../public/Privacy.html">Политика конфиденциальности</a></div>
+					<div><a href="../Privacy.html">Политика конфиденциальности</a></div>
                     <div>Информация на сайте носит ознакомительный характер и не является публичной офертой</div>
                 </div>
             </div>

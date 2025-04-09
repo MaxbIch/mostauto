@@ -53,7 +53,7 @@ export const Popular = () => {
         <Swiper
             ref={swiperRef}
             navigation
-            speed={2000}
+            speed={1000}
             pagination={{clickable: true}}
             autoplay={false}
             modules={[Navigation, Pagination]}
@@ -68,7 +68,7 @@ export const Popular = () => {
                       // @ts-ignore
                       direction={'vertical'}
                       slidesPerView={1}
-                      speed={2000}
+                      speed={1000}
                       autoplay={{
                         delay: 4000,
 
@@ -114,7 +114,7 @@ export const Popular = () => {
                     <TextItem title={"Коробка:"} text={data?.gearBoxType || ""}/>
                     <TextItem title={"Привод:"} text={data?.driveType || ""}/>
                     <TextItem title={"Тип кузова:"} text={data?.bodyType || ""}/>
-                    <TextItem title={"Пробег:"} text={`${data?.mileage} км`}/>
+                    <TextItem title={"Пробег:"} text={`${data?.mileage} миль`}/>
                     <TextItem title={"Регион покупки:"} text={data?.region || ""}/>
 
                     {/*<div>*/}
@@ -123,14 +123,15 @@ export const Popular = () => {
 
                     <TextItem
                         title={"Цена \n в Беларуси"}
-                        text={data?.priceInBelarus || ""}
+                        text={`${data?.priceInBelarus} $` || ""}
                         price={1}
                     />
                     <TextItem
-                        title={"Цена привоза\n из-за рубежа"}
-                        text={data?.priceFromAbord || ""}
+                        title={"Цена привоза\n из-за рубежа "}
+                        text={`${data?.priceFromAbord} $` || ""}
                         price={2}
                     />
+                      <div className="price-info">указанная стоимость под ключ, без учёта восстановительных работ</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -145,63 +146,35 @@ export const Popular = () => {
 interface TextItemI {
   title: string;
   text: string;
-  price?: number | null;
+  price?: number  | null;
 }
 
 const TextItem: FC<TextItemI> = ({title, text, price = null}) => {
 
-  const style = {
-    width: "100%",
-    display: "flex",
-    color: "rgba(255, 255, 255, 1)",
-    marginBottom: "15px",
-  }
-
-  if (!price) {
-    style["justifyContent"] = "space-between"
-    style["borderBottom"] = "1px solid rgba(255, 255, 255, 0.25)"
-    style["fontSize"] = "24px"
-    style["fontWeight"] = 400
-    style["lineHeight"] = "100%"
-  } else {
-    style["flexDirection"] = "column"
-    style["alignItems"] = "start"
-    style["fontSize"] = "16px"
-    style["fontWeight"] = 400
-    style["lineHeight"] = "100%"
-    style["marginBottom"] = "33px"
-  }
-
-  const styleTitle = {}
-  const styleText = {
-    fontSize: "24px",
-    fontWeight: 400,
-    lineHeight: "100%",
-    fontFamily: "Montserrat",
-  }
-
 
   return (
-      <div style={{...style}}>
-        <div style={{...styleTitle}}>{title}</div>
-        <div className={"qqw"} style={{...styleText}}>
-          {text}
-          {
-              price && price === 1 &&
-              <img
-                  src={redLine}
-                  alt={""}
-                  style={{
-                    position: "absolute",
-                    zIndex: 1,
-                    width: "140%",
-                    height: "45px",
-                    top: 0,
-                    left: -20
-                  }}
-              />
-          }
-        </div>
+      <div className={`slider-text-line ${!price ? "slider-text-line-title" : "slider-text-line-price"}`} >
+        <div>{title}</div>
+          <div
+              className={`qqw slider-text-line-price-value ${price === 1 ? "slider-text-line-price-value-price1" : price === 2 ? "slider-text-line-price-value-price2" : ""}`}>
+              {text}
+              {
+                  price && price === 1 &&
+				  <img
+					  src={redLine}
+					  alt={""}
+					  style={{
+                          position: "absolute",
+                          zIndex: 1,
+                          width: "120%",
+                          height: "35px",
+                          top: 0,
+                          left: 0,
+
+                      }}
+				  />
+              }
+          </div>
       </div>
 
   )
