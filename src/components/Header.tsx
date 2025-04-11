@@ -74,7 +74,7 @@ function Header({menuActive, setMenuActive}) {
                                      onClick={toggleMenu}>
                                     <span></span>
                                 </div>
-                                <div className="header-list-item header-list-item-main"><a href="#">Главная</a></div>
+                                <div className="header-list-item header-list-item-main" onClick={toggleMenu}><a href="#header">Главная</a></div>
                                 <hr className="header-list-item-main-hr"/>
                                 <div className={`header-list-item ${menuActive ? "active" : ""}`}
                                      onClick={toggleMenu}>
@@ -88,6 +88,10 @@ function Header({menuActive, setMenuActive}) {
                                      onClick={toggleMenu}>
                                     <hr/>
                                     <a href="#Tariffs">Тарифы</a></div>
+                                <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                                     onClick={toggleMenu}>
+                                    <hr/>
+                                    <a href="#form">Форма заявки</a></div>
                                 <div className={`header-list-item ${menuActive ? "active" : ""}`}
                                      onClick={toggleMenu}>
                                     <hr/>
@@ -115,7 +119,7 @@ function Header({menuActive, setMenuActive}) {
                                  onClick={toggleMenu}>
                                 <span></span>
                             </div>
-                            <div className="header-list-item header-list-item-main"><a href="#">Главная</a></div>
+                            <div className="header-list-item header-list-item-main" onClick={toggleMenu}><a href="#header">Главная</a></div>
                             <hr className="header-list-item-main-hr"/>
                             <div className={`header-list-item ${menuActive ? "active" : ""}`}
                                  onClick={toggleMenu}>
@@ -132,6 +136,10 @@ function Header({menuActive, setMenuActive}) {
                             <div className={`header-list-item ${menuActive ? "active" : ""}`}
                                  onClick={toggleMenu}>
                                 <hr/>
+                                <a href="#form">Форма заявки</a></div>
+                            <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                                 onClick={toggleMenu}>
+                                <hr/>
                                 <a href="#footer">Контакты</a></div>
                         </div>
                     </div>
@@ -142,7 +150,7 @@ function Header({menuActive, setMenuActive}) {
 
             <Slider
                 // @ts-ignore
-            ref={slider => (sliderRef = slider)} {...settings}
+                ref={slider => (sliderRef = slider)} {...settings}
             >
                 <div className="background-container">
                     <img src={slide1} alt="Background" className="background-image"/>
@@ -160,19 +168,19 @@ function Header({menuActive, setMenuActive}) {
                             <div className="header-slider-content-item-flex ff"></div>
                         </div>
                         <div className="header-slider-content-item">
-                            <div className="header-slider-content-item-flex"><span className="point point1"></span>богатая
-                                комплектация
-                            </div>
                             <div className="header-slider-content-item-flex"><span className="point point1"></span>обязательная
                                 проверка по базам данных и истории ДТП
                             </div>
+                            <div className="header-slider-content-item-flex"><span className="point point1"></span>
+                                богатая комплектация
+                            </div>
                         </div>
                         <div className="header-slider-content-item">
-                            <div className="header-slider-content-item-flex"><span className="point point1"></span>доставка
-                                от 70 дней
-                            </div>
                             <div className="header-slider-content-item-flex"><span className="point point1"></span>лучшее
                                 решение для бензиновых автомобилей
+                            </div>
+                            <div className="header-slider-content-item-flex"><span className="point point1"></span>
+                                доставка от 70 дней
                             </div>
                         </div>
                         <div className="button-cont">

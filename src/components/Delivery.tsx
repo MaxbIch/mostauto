@@ -135,7 +135,7 @@ function Delivery () {
 
                                 <div className="step step6">
                                     <div className="step-main">
-                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                        Передача автомобиля<br/> заказчику
                                     </div>
                                     <div className="step-main-number">6</div>
                                     <div className="del-point"></div>
@@ -183,8 +183,9 @@ function Delivery () {
                                     <div className="del-point"></div>
                                     <div className="step-main-number">2</div>
                                     <div className="step-main">
-                                        Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
-                                        согласование к торгам
+                                        Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям и <br/>
+                                        согласование к покупке<br/> или торгам
+
                                     </div>
                                 </div>
                             </div>
@@ -192,8 +193,9 @@ function Delivery () {
 
                                 <div className="step step4">
                                     <div className="step-main">
-                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
-                                        отслеживание до<br/> прибытия в Беларусь
+                                        Доставка авто на <br/>транзитную площадку<br/> в Варшаве и оформление<br/>
+                                        документов на экспорт
+
                                     </div>
                                     <div className="step-main-number">4</div>
                                     <div className="del-point"></div>
@@ -215,8 +217,8 @@ function Delivery () {
                                     <div className="del-point"></div>
                                     <div className="step-main-number">3</div>
                                     <div className="step-main">
-                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
-                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                        Победа на торгах либо<br/> бронирование авто у<br/> дилера (продавца) с<br/>
+                                        дальнейшей оплатой либо <br/>поиск нового варианта
                                     </div>
                                 </div>
                             </div>
@@ -235,8 +237,8 @@ function Delivery () {
                             <div className="step step2 step2-mobile">
                                 <div className="step-main-number">2</div>
                                 <div className="step-main step-main-mobile">
-                                    Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям<br/> и
-                                    согласование к торгам
+                                    Заключение договора,<br/> подбор автомобиля по<br/> заданным требованиям и <br/>
+                                    согласование к покупке<br/> или торгам
                                 </div>
                             </div>
 
@@ -253,8 +255,8 @@ function Delivery () {
                                 <div className="step step3">
                                     <div className="step-main-number">3</div>
                                     <div className="step-main step-main-mobile">
-                                        Победа в торгах и<br/> оформление документов<br/> для оплаты и
-                                        доставки<br/> подобранного автомобиля<br/> или поиск нового
+                                        Победа на торгах либо<br/> бронирование авто у<br/> дилера (продавца) с<br/>
+                                        дальнейшей оплатой либо <br/>поиск нового варианта
                                     </div>
                                 </div>
                             </div>
@@ -300,15 +302,15 @@ function Delivery () {
                                 <div className="step step6">
                                     <div className="step-main-number">6</div>
                                     <div className="step-main step-main-mobile">
-                                        Передача автомобиля<br/> заказчику и помощь в<br/> восстановлении
+                                        Передача автомобиля<br/> заказчику
                                     </div>
                                 </div>
 
                                 <div className="step step4">
                                     <div className="step-main-number">4</div>
                                     <div className="step-main step-main-mobile">
-                                        Доставка автомобиля в<br/> порт, загрузка в контейнер<br/> и
-                                        отслеживание до<br/> прибытия в Беларусь
+                                        Доставка авто на <br/>транзитную площадку<br/> в Варшаве и оформление <br/>
+                                        документов на экспорт
                                     </div>
                                 </div>
                             </div>

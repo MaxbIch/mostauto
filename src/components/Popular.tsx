@@ -27,24 +27,14 @@ type CarType = {
 
 export const Popular = () => {
 
-  const [activeIndex, setActiveIndex] = useState<number>(1)
-  const [count, setCount] = useState<number | null>(null);
-  const [data, setData] = useState<CarType>()
-
-  const res = async () => {
-    const {
-      car,
-      count
-    } = await fetch(`https://mostauto.by/mostauto-api/public/api/car?page=${activeIndex}`).then((res) => res.json());
-    setCount(count)
-    setData(car)
-  }
+  const [data, setData] = useState<CarType[]>()
 
   useEffect(() => {
     (async () => {
-      await res()
+      const cars = await fetch(`https://mostauto.by/mostauto-api/public/api/cars`).then((res) => res.json());
+      setData(cars)
     })()
-  }, [activeIndex]);
+  }, []);
 
   const swiperRef = useRef(null)
 
@@ -58,14 +48,12 @@ export const Popular = () => {
             autoplay={false}
             modules={[Navigation, Pagination]}
             className="swiper outer-swiper"
-            onSlideChange={(swiper: any) => setActiveIndex(swiper.activeIndex)}
         >
-          {[...new Array(count)].map(index => (
+          {data && data.map((car, index) => (
               <SwiperSlide key={index} className={"swiper-slide"}>
                 <div className="outer-slide"
                      style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <Swiper
-                      // @ts-ignore
                       direction={'vertical'}
                       slidesPerView={1}
                       speed={1000}
@@ -76,15 +64,15 @@ export const Popular = () => {
                       pagination={{clickable: true}}
                       modules={[Pagination, Autoplay]}
                       className="inner-swiper"
+                      lazyPreloadPrevNext={1}
                   >
-                    {data && data.imgs.map((url, innerIndex) => (
+                    {car && car.imgs.map((url, innerIndex) => (
                         <SwiperSlide
                             key={innerIndex}
                             className={"inner-swiper-slide"}
                         >
                             <img
                                 src={`${url}`}
-                                loading={"lazy"}
                                 className={"inner-swiper-slide-img"}
                             />
                         </SwiperSlide>
@@ -106,16 +94,16 @@ export const Popular = () => {
                           fontFamily: "Montserrat",
                         }}
                     >
-                      {data?.manufacturer} {data?.model}
+                      {car?.manufacturer} {car?.model}
                     </h2>
-                    <TextItem title={"Год выпуска:"} text={data?.year || ""}/>
+                    <TextItem title={"Год выпуска:"} text={car?.year || ""}/>
                     <TextItem title={"Двигатель:"}
-                              text={`${data?.engineType || ""},${data?.engineFuelType || ""}${data?.engineVolume ? ', ' + data.engineVolume + ' л' : ""}`}/>
-                    <TextItem title={"Коробка:"} text={data?.gearBoxType || ""}/>
-                    <TextItem title={"Привод:"} text={data?.driveType || ""}/>
-                    <TextItem title={"Тип кузова:"} text={data?.bodyType || ""}/>
-                    <TextItem title={"Пробег:"} text={`${data?.mileage} миль`}/>
-                    <TextItem title={"Регион покупки:"} text={data?.region || ""}/>
+                              text={`${car?.engineType || ""},${car?.engineFuelType || ""}${car?.engineVolume ? ', ' + car.engineVolume + ' л' : ""}`}/>
+                    <TextItem title={"Коробка:"} text={car?.gearBoxType || ""}/>
+                    <TextItem title={"Привод:"} text={car?.driveType || ""}/>
+                    <TextItem title={"Тип кузова:"} text={car?.bodyType || ""}/>
+                    <TextItem title={"Пробег:"} text={`${car?.mileage} км`}/>
+                    <TextItem title={"Регион покупки:"} text={car?.region || ""}/>
 
                     {/*<div>*/}
                     {/*    Все хар-ки*/}
@@ -123,12 +111,12 @@ export const Popular = () => {
 
                     <TextItem
                         title={"Цена \n в Беларуси"}
-                        text={`${data?.priceInBelarus} $` || ""}
+                        text={`${car?.priceInBelarus} $` || ""}
                         price={1}
                     />
                     <TextItem
                         title={"Цена привоза\n из-за рубежа "}
-                        text={`${data?.priceFromAbord} $` || ""}
+                        text={`${car?.priceFromAbord} $` || ""}
                         price={2}
                     />
                       <div className="price-info">указанная стоимость под ключ, без учёта восстановительных работ</div>
@@ -155,26 +143,25 @@ const TextItem: FC<TextItemI> = ({title, text, price = null}) => {
   return (
       <div className={`slider-text-line ${!price ? "slider-text-line-title" : "slider-text-line-price"}`} >
         <div>{title}</div>
-          <div
-              className={`qqw slider-text-line-price-value ${price === 1 ? "slider-text-line-price-value-price1" : price === 2 ? "slider-text-line-price-value-price2" : ""}`}>
-              {text}
-              {
-                  price && price === 1 &&
-				  <img
-					  src={redLine}
-					  alt={""}
-					  style={{
-                          position: "absolute",
-                          zIndex: 1,
-                          width: "120%",
-                          height: "35px",
-                          top: 0,
-                          left: 0,
+        <div className={`qqw slider-text-line-price-value ${price === 1 ? "slider-text-line-price-value-price1" : price === 2 ? "slider-text-line-price-value-price2" : ""}`} >
+          {text}
+          {
+              price && price === 1 &&
+              <img
+                  src={redLine}
+                  alt={""}
+                  style={{
+                    position: "absolute",
+                    zIndex: 1,
+                    width: "120%",
+                    height: "35px",
+                    top: 0,
+                    left: 0,
 
-                      }}
-				  />
-              }
-          </div>
+                  }}
+              />
+          }
+        </div>
       </div>
 
   )

@@ -91,6 +91,7 @@
 		max-width: 300px;
 		margin: 40px auto 0;
 	}
+
 }
 
 
@@ -202,7 +203,7 @@
 
 
 	.form_tittle {
-		margin: 50px 0 25px 0;
+		padding: 50px 0 25px 0;
 		text-align: center;
 	}
 
@@ -248,9 +249,49 @@
 	.header-slider-content {
 		max-width: 20vw;
 	}
+
+	.order-page .form_tittle {
+		padding: 150px 0 25px 0;
+		text-align: center;
+	}
+
+	.order-page .navbar .navbar-right .logo-navbar {
+		margin: auto 15px;
+	}
+
+	.popular-container .contactUs {
+		width: 45%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.slider-text-line-title,
+	.slider-text-line-price,
+	.slider-text-line-price-value {
+		font-size: 19px;
+	}
+
+	.popular-container .contactUs {
+		width: 55%;
+	}
 }
 
 @media screen and (max-width: 1024px) {
+	.slider-text-line-title,
+	.slider-text-line-price,
+	.slider-text-line-price-value {
+		font-size: 16px;
+	}
+
+	.popular-container .contactUs,
+	.del-container .contactUs {
+		width: 100%;
+	}
+
+	.popular-container .line {
+		display: none;
+	}
+
 	.header-slider-content {
 		max-width: 20vw;
 		left: 10%;
@@ -353,8 +394,12 @@
 
 	.popular-container {
 		width: 100vw !important;
+		margin: 0;
 	}
 
+	.swiper-button-next {
+		margin-right: 0;
+	}
 
 	.alert-tittle {
 		font-size: 32px;
@@ -393,6 +438,12 @@
 	.item-info {
 		padding-right: 25px;
 		padding-bottom: 50px;
+	}
+
+	.slider-text-line-title,
+	.slider-text-line-price,
+	.slider-text-line-price-value {
+		font-size: 20px;
 	}
 
 }
@@ -566,6 +617,11 @@
 		max-width: 200px;
 		width: 100%;
 		font-size: 16px;
+	}
+
+	.step4 .step-main.step-main-mobile {
+		max-width: 150px;
+		width: 100%;
 	}
 
 	.step {
@@ -887,18 +943,10 @@
 	}
 
 	.item-info h2 {
-		font-size: 36px !important;
-		width: 90vw;
+		font-size: 28px !important;
+		width: 95vw;
 	}
 
-	/*.item-info div {*/
-	/*	font-size: 20px;*/
-	/*	margin-bottom: 5px;*/
-	/*}*/
-	/*.qqw {*/
-	/*	font-size: 20px;*/
-	/*	margin-top: 5px;*/
-	/*}*/
 	.swiper-button-prev, .swiper-button-next {
 		top: 33% !important;
 	}
@@ -949,8 +997,8 @@
 	}
 
 	.slider-country {
-		margin: 25px 25px 0 0;
-		font-size: 60px;
+		margin: 40px 25px 0 0;
+		font-size: 70px;
 	}
 
 
@@ -1014,7 +1062,7 @@
 	.form_tittle {
 		font-size: 18px;
 		width: 90vw;
-		margin: 25px auto;
+		padding: 25px 0;
 	}
 
 	span.error {
@@ -1030,7 +1078,7 @@
 	}
 
 	.navbar-contact-us {
-		font-size: 12px;
+		font-size: 11px;
 		margin-right: 30px;
 		padding: 0;
 	}
@@ -1120,11 +1168,31 @@
 
 	.slider-text-line-price-value-price2 {
 		margin-top: 5px;
-		font-size: 28px !important;
 	}
 
 	.price-info {
 		margin-top: -10px;
+	}
+
+	.order-page .form_tittle {
+		padding: 100px 0 25px 0;
+	}
+
+	.order-page .footer-right {
+		padding-bottom: 25px;
+	}
+
+	.navbar-tittle img {
+		display: none;
+	}
+
+	.navbar-tittle {
+		margin-right: 35px;
+	}
+
+	.telegram-navbar {
+		width: 40px;
+		margin-right: 5px;
 	}
 }
 
@@ -1142,8 +1210,4 @@
 		margin-left: 10px !important;
 	}
 
-
-	.background-image {
-		width: 215%;
-	}
 }
