@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ContactUs from "./ContactUs";
 
-function Delivery () {
+function Delivery ({ onOpenForm }: { onOpenForm: () => void }) {
 
 	const [activeTab, setActiveTab] = useState("USA"); // По умолчанию USA
 
@@ -18,7 +18,7 @@ function Delivery () {
             <div className="delivery-container-tittle"><h5 className={activeTab === "USA" ? "active" : ""}
                                                            onClick={() => handleTabChange("USA")}>США</h5>
                 <span>|</span>
-                <h5 className={activeTab === "EU" ? "active" : ""} onClick={() => handleTabChange("EU")}>ЕВРОПА</h5>
+                <h5 className={activeTab === "EU" ? "active" : ""} onClick={() => handleTabChange("EU")}>КОРЕЯ</h5>
             </div>
 
             <div className="background">
@@ -140,7 +140,7 @@ function Delivery () {
                                     <div className="step-main-number">6</div>
                                     <div className="del-point"></div>
                                     <div className="step-line"></div>
-                                    <div className="step-line-text">7-30 дней</div>
+                                    <div className="step-line-text">1 день</div>
                                     <div className="step-line"></div>
                                     <div className="del-point-end"></div>
                                 </div>
@@ -193,14 +193,14 @@ function Delivery () {
 
                                 <div className="step step4">
                                     <div className="step-main">
-                                        Доставка авто на <br/>транзитную площадку<br/> в Варшаве и оформление<br/>
+                                        Доставка авто на <br/>транзитную площадку<br/> в Владивостоке и оформление<br/>
                                         документов на экспорт
 
                                     </div>
                                     <div className="step-main-number">4</div>
                                     <div className="del-point"></div>
                                     <div className="step-line"></div>
-                                    <div className="step-line-text">2-2,5 мес.</div>
+                                    <div className="step-line-text">7-14 дней</div>
                                     <div className="step-line"></div>
                                     <div className="del-point-end"></div>
                                 </div>
@@ -278,7 +278,7 @@ function Delivery () {
                             <div className="del-time-left">
                                 <div className="del-point-end"></div>
                                 <div className="step-line"></div>
-                                <div className="step-line-text">7-30 дней</div>
+                                <div className="step-line-text">1 день</div>
                                 <div className="step-line"></div>
                                 <div className="step-line"></div>
                                 <div className="step-line-text">1 день</div>
@@ -290,7 +290,7 @@ function Delivery () {
                             <div className="del-time-right">
                                 <div className="del-point-end"></div>
                                 <div className="step-line"></div>
-                                <div className="step-line-text">2-2,5 мес</div>
+                                <div className="step-line-text">7-14 дней</div>
                                 <div className="step-line"></div>
                                 <div className="step-line"></div>
                                 <div className="step-line-text">1-3 дня</div>
@@ -309,7 +309,7 @@ function Delivery () {
                                 <div className="step step4">
                                     <div className="step-main-number">4</div>
                                     <div className="step-main step-main-mobile">
-                                        Доставка авто на <br/>транзитную площадку<br/> в Варшаве и оформление <br/>
+                                        Доставка авто на <br/>транзитную площадку<br/> в Владивостоке и оформление <br/>
                                         документов на экспорт
                                     </div>
                                 </div>
@@ -433,7 +433,7 @@ function Delivery () {
                 Указанные сроки являются предварительными и могут корректироваться в зависимости от сложности запроса,
                 местоположения автомобиля и др.
             </div>
-            <ContactUs tittle={"ПОДБОР И ДОСТАВКА"} type={"black"}/>
+            <ContactUs tittle={"ПОДБОР И ДОСТАВКА"} type={"black"} onOpenForm={onOpenForm} />
         </div>
     );
 }

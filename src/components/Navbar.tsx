@@ -1,11 +1,7 @@
 // @ts-ignore
-import Arrow2 from "../img/Arrow2.png"
+import navbarLogo from "../img/navbarLogo.svg"
 // @ts-ignore
-import navbarLogo from "../img/navbarLogo.png"
-// @ts-ignore
-import telegram from "../img/telegram.png"
-// @ts-ignore
-import telegramActive from "../img/telegram-active.png"
+import headerLogo from "../img/headerLogo.png";
 
 
 function Navbar({menuActive, setMenuActive}) {
@@ -23,22 +19,50 @@ function Navbar({menuActive, setMenuActive}) {
     return (
         <div className={`navbar ${menuActive ? "active" : ""}`}>
             <div className="navbar-left">
-                <div className={`header-burger ${menuActive ? "active" : ""}`} onClick={toggleMenu}>
+                <div className={`header-burger header-burger-navbar ${menuActive ? "active" : ""}`} onClick={toggleMenu}>
                     <span></span>
                 </div>
-                MENU
-            </div>
-            <div className="navbar-right">
 
+                <div className={`header-menu ${menuActive ? "active" : ""}`}>
+                    <div className="header-list">
+                        <a href="https://mostauto.by"><img className="headerLogo-open" src={headerLogo} alt="Logo"/></a>
+                        <div className={`header-burger header-burger-open ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <span></span>
+                        </div>
+                        <div className="header-list-item header-list-item-main" onClick={toggleMenu}><a
+                            href="#header">Главная</a></div>
+                        <hr className="header-list-item-main-hr"/>
+                        <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <hr/>
+                            <a href="#Popular">Популярные авто</a></div>
+                        <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <hr/>
+                            <a href="#Delivery">Подбор и доставка</a></div>
+                        <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <hr/>
+                            <a href="#Tariffs">Тарифы</a></div>
+                        <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <hr/>
+                            <a href="#form">Форма заявки</a></div>
+                        <div className={`header-list-item ${menuActive ? "active" : ""}`}
+                             onClick={toggleMenu}>
+                            <hr/>
+                            <a href="#footer">Контакты</a></div>
+                    </div>
+                </div>
+
+                <div className="menu-menu" onClick={toggleMenu}>MENU</div>
+            </div>
+
+
+            <div className="navbar-right">
                 <a href="#header"><img className="logo-navbar" src={navbarLogo} alt=""/></a>
-                <div className="telegram-block">
-                    <img className="telegram-navbar" src={telegram} alt=""/>
-                    <a href="https://t.me/manager_mostauto" target="_blank" rel="noreferrer"><img className="telegram-navbar telegram-navbar-active" src={telegramActive} alt=""/></a>
-                </div>
-                <div className="navbar-tittle">ПОДОБРАТЬ АВТО<img src={Arrow2} alt=""/></div>
-                <div className="navbar-contact-us">
-                    <div className="number"><b><a href="tel:+375445344660">+375 (44) 534 46 60</a></b></div>
-                </div>
+                <a href="tel:+375445344660"> +375 (44) 534 46 60</a>
             </div>
         </div>
     )

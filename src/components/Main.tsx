@@ -1,7 +1,7 @@
 import ContactUs from "./ContactUs";
 
 
-function Main() {
+function Main({ onOpenForm }: { onOpenForm: () => void }) {
     return (
         <div className="main">
             <h1>ПОЧЕМУ СТОИТ<br/>ДОВЕРИТЬСЯ <b>MOSTAUTO</b></h1>
@@ -13,11 +13,11 @@ function Main() {
                     </div>
                     <div className="main-content-bottom">
                         <div className="main-content-3"><div className="main-content-number">3</div><b>Честный подбор</b> по проверенным базам данных с отчетами историй ДТП и сотрудничество только с надёжными продавцами и страховыми аукционами</div>
-                        <div className="main-content-4"><div className="main-content-number">4</div><b>Консультация</b> по подобру запчастей для вашего автомобиля как с внутреннего так и с внешних рынков</div>
+                        <div className="main-content-4"><div className="main-content-number">4</div><b>Консультация</b> по подбору запчастей для вашего автомобиля как с внутреннего так и с внешних рынков</div>
                     </div>
                 </div>
             </div>
-			<ContactUs tittle={"ГЛАВНАЯ"} />
+			<ContactUs tittle={"ГЛАВНАЯ"} onOpenForm={onOpenForm} />
         </div>
     )
 }
